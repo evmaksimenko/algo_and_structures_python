@@ -7,11 +7,12 @@
 from random import randrange
 
 
-def bubble_sort(array):
+def bubble_sort(array, reverse=False):
     a = array[:]
     for i in range(len(a) - 1):
         for j in range(len(a) - i - 1):
-            if a[j] < a[j + 1]:
+            condition = a[j] < a[j + 1] if reverse else a[j] > a[j + 1]
+            if condition:
                 a[j], a[j + 1] = a[j + 1], a[j]
     return a
 
@@ -22,4 +23,4 @@ arr = [randrange(-100, 100) for _ in range(N)]
 print('Исходный массив:')
 print(arr)
 print('Отсортированный массив по убыванию:')
-print(bubble_sort(arr))
+print(bubble_sort(arr, reverse=True))
