@@ -46,4 +46,6 @@ def count_s(s1: str, s2: str) -> List:
 
 main_str = 'instr string finst'
 str_to_find = 'in'
-print(f'Строка "{str_to_find}" входит в строку "{main_str}" в позициях {count_s(main_str, str_to_find)}')
+c = count_s(main_str, str_to_find)
+print(f'Строка "{str_to_find}" входит в строку "{main_str}" в позициях {c}')
+print(f'Количество вхождений равно {len(c)}')
